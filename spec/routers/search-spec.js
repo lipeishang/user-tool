@@ -6,11 +6,10 @@ const supertest = require('supertest');
 const expect = require('expect');
 import request from 'supertest';
 
-describe('test search user',()=>{
-    it('should search user is true',(done)=>{
-        request(server)
-            .post('/searchUser')
-            .send({userName:'ly'})
+describe('get /searchUser',()=>{
+    it('should search user return info',(done)=>{
+        request(app)
+            .get('/searchUser/:phonenumber')
             .expect(200,done)
     })
 });
