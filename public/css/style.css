@@ -1,0 +1,35 @@
+body {
+    font-size: large;
+    background-color: snow;
+}
+
+.show {
+    background-color: #4F4D3F;
+    opacity:0.4;
+    filter:alpha(opacity=40);
+}
+
+table {
+
+    margin-top: 80px;
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow: hidden;
+    width:90%;
+    text-align: center;
+}
+
+.opration {
+    position: fixed;
+    top: 20px;
+    left: 30%;
+}
+
+input{
+    height:35px;
+    border:1px solid #d9d9d9;
+    border-radius:5px;
+    padding:0 6px;
+    width:300px;
+}
+
