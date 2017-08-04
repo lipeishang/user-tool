@@ -1,4 +1,4 @@
-### user-tools
+## user-tools
 #### 简介：
 一个基于 Web 的简单数据库维护工具，能够对用户信息（User）进行 CRUD 操作，主要功能有：
 
@@ -30,4 +30,6 @@ CREATE TABLE `user_info` (
   `remark` varchar(2000) DEFAULT NULL,  
   PRIMARY KEY (`id`)
 ); ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into user_info values(1,"西瓜","李佩赏",23,"女","15829061748","15829061748@163.com","无");
 ```
