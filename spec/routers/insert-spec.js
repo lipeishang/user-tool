@@ -2,7 +2,6 @@
  * Created by lipeishang on 17-8-3.
  */
 const app = require('../../app');
-const supertest = require('supertest');
 const expect = require('expect');
 import request from 'supertest';
 let db = require('../../server/tools/connection');

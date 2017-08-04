@@ -7,7 +7,7 @@ describe('delete /deleteUser', () => {
     it('should return "status":true', (done)=> {
         request(app)
             .post('/deleteUser')
-            .send({"phonenumber":15829061748})
+            .send({"id":2})
             .end((err, res) => {
                 if (err) {
                     done.fail(err);

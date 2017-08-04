@@ -9,7 +9,7 @@ let db = require('../tools/connection');
 let userHandle = require('../tools/userOpration');
 
 router.post('/deleteUser', (req, res) => {
-    db.query(userHandle.delete, req.body.phonenumber, function (err) {
+    db.query(userHandle.delete, req.body.id, function (err) {
         if (err) return err;
         res.send({"status":true});
     });

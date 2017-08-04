@@ -16,8 +16,8 @@ class mainPage extends Component {
         this.props.addUsers({"userName":userName,"name":name,"age":age,"sex":sex,"phonenumber":phonenumber,"email":email,"remark":remark})
     }
 
-    delete(phonenumber) {
-        this.props.deleteUser({"phonenumber": phonenumber});
+    delete(id) {
+        this.props.deleteUser({"id": id});
     }
 
     modify(val) {
@@ -40,8 +40,9 @@ class mainPage extends Component {
             const newPhonenumber = this.refs.mdPhonenumber.value;
             const newEmail = this.refs.mdEmail.value;
             const newRemark = this.refs.mdRemark.value;
+            let id = id;
             if (newUserName && newName && newAge && newSex && newPhonenumber && newEmail && newRemark) {
-                this.props.modifyUser({"newUserName":newUserName, "newName":newName, "newAge":newAge, "newSex":newSex,"newPhonenumber":newPhonenumber,"newEmail":newEmail, "newRemark":newRemark})
+                this.props.modifyUser({"newUserName":newUserName, "newName":newName, "newAge":newAge, "newSex":newSex,"newPhonenumber":newPhonenumber,"newEmail":newEmail, "newRemark":newRemark,"id":id})
             }
     }
 
@@ -65,7 +66,7 @@ class mainPage extends Component {
                 <td>{val.phonenumber}</td>
                 <td>{val.email}</td>
                 <td>{val.remark}</td>
-                <td><button className="btn btn-primary" onClick={this.modify.bind(this,val)}>修改</button> <button className="btn btn-danger" onClick={this.delete.bind(this,val.phonenumber)}>删除</button></td>
+                <td><button className="btn btn-primary" onClick={this.modify.bind(this,val)}>修改</button> <button className="btn btn-danger" onClick={this.delete.bind(this,val.id)}>删除</button></td>
             </tr>
         });
 
@@ -120,8 +121,7 @@ class mainPage extends Component {
                             <input type="text" ref="mdRemark" className="form-control"/>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-primary"
-                                   onClick={this.modifyInfo.bind(this)} >
+                            <button type="button" className="btn btn-primary" onClick={this.modifyInfo.bind(this)} >
                                 提交
                             </button>
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">关闭</button>
