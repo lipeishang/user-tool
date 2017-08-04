@@ -21,6 +21,7 @@ class mainPage extends Component {
     }
 
     modify(val) {
+        this.refs.id.value = val.id;
         this.refs.mdUserName.value = val.userName;
         this.refs.mdName.value = val.name;
         this.refs.mdAge.value = val.age;
@@ -33,6 +34,7 @@ class mainPage extends Component {
     }
 
     modifyInfo(){
+            const id = this.refs.id.value;
             const newUserName = this.refs.mdUserName.value;
             const newName = this.refs.mdName.value;
             const newAge = this.refs.mdAge.value;
@@ -40,7 +42,6 @@ class mainPage extends Component {
             const newPhonenumber = this.refs.mdPhonenumber.value;
             const newEmail = this.refs.mdEmail.value;
             const newRemark = this.refs.mdRemark.value;
-            let id = id;
             if (newUserName && newName && newAge && newSex && newPhonenumber && newEmail && newRemark) {
                 this.props.modifyUser({"newUserName":newUserName, "newName":newName, "newAge":newAge, "newSex":newSex,"newPhonenumber":newPhonenumber,"newEmail":newEmail, "newRemark":newRemark,"id":id})
             }
@@ -85,6 +86,7 @@ class mainPage extends Component {
                                 <h4 className="modal-title" id="myModalLabel">添加一个用户</h4>
                             </div>
                             <div className="input-group">
+                                <input type="text" ref="id" className="form-control" placeholder="用户id" readOnly="readOnly"/>
                                 <input type="text" ref="userName" className="form-control" placeholder="用户名"/>
                                 <input type="text" ref="name" className="form-control" placeholder="姓名"/>
                                 <input type="number" ref="age" className="form-control" placeholder="年龄"/>
@@ -112,6 +114,7 @@ class mainPage extends Component {
                             <h4 className="modal-title" id="myModalLabel">修改用户信息</h4>
                         </div>
                         <div className="input-group">
+
                             <input type="text" ref="mdUserName" className="form-control"/>
                             <input type="text" ref="mdName" className="form-control"/>
                             <input type="number" ref="mdAge" className="form-control"/>

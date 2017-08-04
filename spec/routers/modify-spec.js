@@ -15,10 +15,6 @@ describe('test update user information',()=>{
         })
     });
 
-    afterEach(()=>{
-        db.query("delete from userInfo where id = ?",id)
-    });
-
     it('should update user is true',(done)=>{
         request(app)
             .post('/modifyUser')
@@ -30,9 +26,13 @@ describe('test update user information',()=>{
                 "newPhonenumber":'18716032317',
                 "newEmail":'236256@qq.com',
                 "newRemark":'love',
-                "newPhonenumber":'18716032317'
+                "id":id
             })
             .expect(200,done);
+    });
+
+    afterEach(()=>{
+        db.query("delete from userInfo where id = ?",id)
     });
 
 });
