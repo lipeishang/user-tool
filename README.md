@@ -1,3 +1,4 @@
+![Build Status](https://travis-ci.org/lipeishang/user-tool.svg?branch=master)
 ## user-tools
 #### 简介：
 一个基于 Web 的简单数据库维护工具，能够对用户信息（User）进行 CRUD 操作，主要功能有：
