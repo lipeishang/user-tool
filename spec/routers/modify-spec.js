@@ -6,7 +6,7 @@ const expect = require('expect');
 import request from 'supertest';
 let db = require('../../server/tools/connection');
 
-describe('test update user information',()=>{
+describe('test modify userInfo',()=>{
     let id;
     beforeEach(()=>{
         db.query('insert into userInfo (userName,name,sex,age,phonenumber,email,remark) values (?,?,?,?,?,?,?)',["lipeizi","lipeizi","女",22,"18716032317",
@@ -15,7 +15,7 @@ describe('test update user information',()=>{
         })
     });
 
-    it('should update user is true',(done)=>{
+    it('should modify user return result',(done)=>{
         request(app)
             .post('/modifyUser')
             .send({
@@ -26,9 +26,10 @@ describe('test update user information',()=>{
                 "newPhonenumber":'18716032317',
                 "newEmail":'236256@qq.com',
                 "newRemark":'love',
-                "id":id
+                "id":1
             })
             .expect(200,done);
+             done();
     });
 
     afterEach(()=>{
